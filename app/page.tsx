@@ -23,15 +23,19 @@ export default function Home() {
               we bring culinary excellence to your table.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
+              <a href="#contacts">
               <Button className="bg-cream text-olive-green hover:bg-cream/50 text-lg px-6 py-6">
                 Book Consultation
               </Button>
+              </a>
+              <a href="#menu">
               <Button
                 variant="outline"
                 className="border-cream bg-cream text-olive-green hover:bg-cream/50 text-lg px-6 py-6"
               >
                 View Menu
               </Button>
+              </a>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -103,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Menu Highlights */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-olive-green/5">
+      <section id="menu" className="py-20 px-4 md:px-6 lg:px-8 bg-olive-green/5">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-olive-green mb-4">Menu Highlights</h2>
@@ -115,8 +119,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Kerala Sadya",
-                description: "Traditional Kerala feast served on banana leaf with a variety of vegetarian dishes.",
+                name: "South Indian Dishes",
+                description: "Traditional Kerala cuisine featuring rice, fish curries, beef fry, and authentic dishes.",
                 
               },
               {
@@ -127,6 +131,11 @@ export default function Home() {
               {
                 name: "Arabic Mezzeh",
                 description: "Assortment of Middle Eastern appetizers, grills, and traditional breads.",
+                
+              },
+              {
+                name: "Chinese Delights",
+                description: "A variety of Chinese dishes including stir-fries, fried rice, noodles, chilli chicken, chilli beef (Veg also available).",
                 
               },
               {
@@ -161,7 +170,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button className="bg-olive-green hover:bg-olive-green/90 text-cream">View Full Menu</Button>
+            {/* <Button className="bg-olive-green hover:bg-olive-green/90 text-cream">View Full Menu</Button> */}
           </div>
         </div>
       </section>
@@ -182,7 +191,8 @@ export default function Home() {
               { title: "Corporate Lunch", category: "Corporate" },
               { title: "Birthday Celebration", category: "Private Party" },
               { title: "Anniversary Dinner", category: "Private Party" },
-              { title: "Product Launch", category: "Corporate" }
+              { title: "Product Launch", category: "Corporate" },
+              { title: "Decoration", category: "Event" }
             ].map((item, index) => (
               <div
                 key={index}
@@ -213,6 +223,56 @@ export default function Home() {
           <div className="text-center mt-12">
             <Button className="bg-olive-green hover:bg-olive-green/90 text-cream">View More Photos</Button>
           </div>
+        </div>
+      </section>
+
+      {/* food prepration */}
+
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-olive-green/5">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-olive-green mb-4">Food Prepration</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Browse through our food prepration setups and culinary creations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "", category: "" },
+              { title: "", category: "" },
+              { title: "", category: "" },
+              { title: "", category: "" },
+              { title: "", category: "" },
+              { title: "", category: "" }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-[4/4] relative overflow-hidden">
+                  <Image
+                    src={`/foodPrep/image${index + 1}.jpg`}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* <div className="absolute inset-0 bg-olive-green/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 className="text-xl font-bold text-cream">{item.title}</h3>
+                    <p className="text-cream/80">{item.category}</p>
+                  </div> */}
+                </div>
+                {/* <div className="p-4 bg-white">
+                  <h3 className="font-bold text-olive-green group-hover:text-olive-green/80 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{item.category}</p>
+                </div> */}
+              </div>
+            ))}
+          </div>
+
+          
         </div>
       </section>
 
@@ -271,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 md:px-6 lg:px-8 bg-olive-green text-cream">
+      <section  id="contacts" className="py-20 px-4 md:px-6 lg:px-8 bg-olive-green text-cream">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -299,7 +359,19 @@ export default function Home() {
                   </svg>
                   <div>
                     <h3 className="font-bold text-lg">Phone</h3>
-                    <p>+91 9539281580, 9746783130</p>
+                    {/* <p>+91 9539281580, 9746783130</p> */}
+
+                    <p>
+  <a
+    href="https://wa.me/919539281580"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline text-cream/90"
+  >
+    +91 9539281580
+  </a>
+  
+</p>
                   </div>
                 </div>
 
@@ -394,7 +466,7 @@ export default function Home() {
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/cazamia_808841/"
                     className="w-10 h-10 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"
                   >
                     <svg
@@ -415,24 +487,22 @@ export default function Home() {
                     </svg>
                   </a>
                   <a
-                    href="#"
-                    className="w-10 h-10 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-5 h-5"
+                      href="https://wa.me/919539281580"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-cream/10 rounded-full flex items-center justify-center hover:bg-cream/20 transition-colors"
                     >
-                      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                    </svg>
-                  </a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 448 512"
+                        fill="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path d="M380.9 97.1C339.3 55.5 282.6 32 224 32 100.3 32 0 132.3 0 256c0 45 11.9 88.7 34.5 127.1L0 480l100.6-33.3C137.4 469 180.3 480 224 480c123.7 0 224-100.3 224-224 0-58.6-23.5-115.3-67.1-158.9zM224 438.6c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-59.8 19.8 20.3-58.3-5-8.1C43.6 319.4 32 288.4 32 256 32 150 118 64 224 64c51.5 0 99.9 20.1 136.4 56.6S416 204.5 416 256c0 106-86 192-192 192zm101.3-138.5c-5.5-2.7-32.4-16-37.5-17.8s-8.7-2.7-12.4 2.7-14.3 17.8-17.5 21.5-6.4 4.1-11.8 1.4c-32.3-16.1-53.4-28.8-74.5-65.1-5.6-9.6 5.6-8.9 16.1-29.6 1.8-3.6.9-6.8-.5-9.5s-12.4-29.9-17-41c-4.5-10.8-9.1-9.3-12.4-9.5-3.2-.2-6.8-.2-10.4-.2s-9.5 1.4-14.4 6.8c-4.9 5.5-18.9 18.4-18.9 44.8s19.4 52 22.1 55.6c2.7 3.6 38.2 58.3 92.7 81.8 12.9 5.6 23 8.9 30.8 11.4 12.9 4.1 24.6 3.5 33.9 2.1 10.3-1.5 32-13.1 36.5-25.8 4.5-12.6 4.5-23.3 3.2-25.6-1.2-2.3-5-3.6-10.5-6.3z" />
+                      </svg>
+                    </a>
                 </div>
               </div>
             </div>
@@ -460,7 +530,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <div className="flex items-center justify-center md:justify-start">
-                <Image src="/images/logo.png" alt="Caza Mia Logo" width={80} height={80} className="mr-3" />
+                <Image src="/images/logo1.png" alt="Caza Mia Logo" width={80} height={80} className="mr-3" />
                 <div>
                   <h3 className="text-2xl font-serif font-bold text-cream">Caza Mia</h3>
                   <p className="text-sm text-gray-400">CATERS & EVENTS</p>
