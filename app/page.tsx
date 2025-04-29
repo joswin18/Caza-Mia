@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight, ChefHat, Users, Calendar, UtensilsCrossed, Linkedin} from "lucide-react"
+import { ArrowRight, ChefHat, Users, Calendar, UtensilsCrossed, Linkedin, Globe} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -559,6 +559,30 @@ export default function Home() {
                 >
                   Developed by Joswin P Satheesh
                   <Linkedin className="ml-2 mb-1" size={18} />
+                </Link>
+                
+              }
+
+              </p>
+              <p className="text-sm text-gray-400 mt-2">
+                {
+                // /* <Link href="#" className="hover:text-cream">
+                //   Privacy Policy
+                // </Link>{" "}
+                // |
+                // <Link href="#" className="hover:text-cream ml-2">
+                //   Terms of Service 
+                // </Link>
+                // | */
+
+                <Link 
+                  href="https://www.foxnity.in/" 
+                  className="inline-flex items-center hover:text-cream ml-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Associated with Foxnity Solutions
+                  <Globe className="ml-2 " size={18} />
                 </Link>
                 
               }

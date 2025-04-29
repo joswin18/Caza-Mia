@@ -16,7 +16,6 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: "Caza Mia | Caters & Events",
   description: "Premium catering services for weddings, corporate events, and private parties in Ernakulam.",
-    generator: 'v0.dev',
     icons: {
       icon: "./images/logo1.png", // or .png, .svg etc.
     },
